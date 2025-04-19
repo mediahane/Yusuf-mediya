@@ -1,36 +1,94 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yusuf Media</title> <form>
-  <div class="form-group">
-    <label for="platform">Platform Seç</label>
-    <select id="platform" onchange="updateServices()">
-      <option value="instagram">Instagram</option>
-      <option value="youtube">YouTube</option>
-      <option value="tiktok">TikTok</option>
-    </select>
-  </div>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yusuf Media</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f8f8f8;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    select, input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .submit-btn {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
 
-  <div class="form-group">
-    <label for="service">Hizmet Seç</label>
-    <select id="service">
-      <option>Instagram Takipçi</option>
-      <option>Instagram Beğeni</option>
-      <option>Instagram Yorum</option>
-    </select>
-  </div>
+  <h2>Yusuf Media</h2>
 
-  <div class="form-group">
-    <label for="username">Kullanıcı Adı</label>
-    <input type="text" id="username" placeholder="kullaniciadi123" />
-  </div>
+  <form>
+    <div class="form-group">
+      <label for="platform">Platform Seç</label>
+      <select id="platform" onchange="updateServices()">
+        <option value="instagram">Instagram</option>
+        <option value="youtube">YouTube</option>
+        <option value="tiktok">TikTok</option>
+      </select>
+    </div>
 
-  <div class="form-group">
-    <label for="quantity">Adet</label>
-    <input type="number" id="quantity" value="100" />
-  </div>
+    <div class="form-group">
+      <label for="service">Hizmet Seç</label>
+      <select id="service">
+        <option>Instagram Takipçi</option>
+        <option>Instagram Beğeni</option>
+        <option>Instagram Yorum</option>
+      </select>
+    </div>
 
-  <button class="submit-btn">Sipariş Ver</button>
-</form>
+    <div class="form-group">
+      <label for="username">Kullanıcı Adı</label>
+      <input type="text" id="username" placeholder="örnek: yusufmedya" />
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Adet</label>
+      <input type="number" id="quantity" value="100" />
+    </div>
+
+    <button class="submit-btn">Sipariş Ver</button>
+  </form>
+
+  <script>
+    function updateServices() {
+      const platform = document.getElementById('platform').value;
+      const service = document.getElementById('service');
+      service.innerHTML = '';
+
+      if (platform === 'instagram') {
+        service.innerHTML += '<option>Instagram Takipçi</option>';
+        service.innerHTML += '<option>Instagram Beğeni</option>';
+        service.innerHTML += '<option>Instagram Yorum</option>';
+      } else if (platform === 'youtube') {
+        service.innerHTML += '<option>YouTube Abone</option>';
+        service.innerHTML += '<option>YouTube Beğeni</option>';
+        service.innerHTML += '<option>YouTube Yorum</option>';
+      } else if (platform === 'tiktok') {
+        service.innerHTML += '<option>TikTok Takipçi</option>';
+        service.innerHTML += '<option>TikTok Beğeni</option>';
+        service.innerHTML += '<option>TikTok Yorum</option>';
+      }
+    }
+  </script>
+
+</body>
+</html>
