@@ -44,6 +44,52 @@
       background-color: #00e676;
     }
   </style>
+</head> <head>
+  <meta charset="UTF-8">
+  <title>Yusuf Media</title>
+
+  <!-- STİL KODLARI -->
+  <style>
+    .floating-icons {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .floating-icons img {
+      position: absolute;
+      width: 60px;
+      opacity: 0.1;
+      animation: float 20s linear infinite;
+    }
+
+    .floating-icons img:nth-child(1) {
+      top: 10%;
+      left: 5%;
+      animation-duration: 30s;
+    }
+
+    .floating-icons img:nth-child(2) {
+      top: 40%;
+      left: 50%;
+      animation-duration: 40s;
+    }
+
+    .floating-icons img:nth-child(3) {
+      top: 70%;
+      left: 20%;
+      animation-duration: 35s;
+    }
+
+    @keyframes float {
+      0%   { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-100vh) rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
 <body>
